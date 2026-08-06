@@ -2,47 +2,7 @@
 
 <u>**NOTE:**</u> These libraries are only necessaries to analyze once. Could be comment or remove it in the simulations.
 
-## UNISIM
 
-It is necessary to analyze the libraries previous to analyze the project.
-
-_(Follow this order to analyze the UNISIM library)_
-``` bash
-ghdl -a --std=08 -fsynopsys --work=unisim unisim/vcomponents/*.vhd
-ghdl -a --std=08 -fsynopsys --work=unisim unisim/primitives/*.vhd
-ghdl -a --std=08 -fsynopsys --work=unisim unisim/retarget/*.vhd
-```
-
-It is important that if you analyze the library UNISIM as VHDL 2008, to analyze your
-files as VHDL 2008.
-
-### Example
-
-``` bash
-ghdl -a --std=08 -fsynopsys --work=unisim unisim/vcomponents/*.vhd
-ghdl -a --std=08 -fsynopsys --work=unisim unisim/primitives/*.vhd
-ghdl -a --std=08 -fsynopsys --work=unisim unisim/retarget/*.vhd
-
-# Analyze the files
-ghdl -a --std=08 rtl/top.vhd
-ghdl -a --std=08 tb/tb_top.vhd
-# Elaboration
-ghdl -e --std=08 tb_top
-# Simulation
-ghdl -r --std=08 tb_top --stop-time=100ms --wave=test.ghw
-```
-
-Recomendation, to simulate with GHDL, use the GHW format because it is more faster.
-
-## XPM
-
-For the XPM library use this command.
-
-``` bash
-ghdl -a --std=08 -fsynopsys --work=xpm xpm/*.vhd
-```
-
-XPM repo: https://github.com/fransschreuder/xpm_vhdl
 
 
 # NVC 
@@ -90,3 +50,60 @@ nvc -L . -e tb_top
 nvc -L . -r tb_top --wave=test.vcd
 ```
 Recomendation, to simulate with NVC, use the VCD format because it is more faster.
+## XPM
+
+For the XPM library use this command.
+
+``` bash
+nvc -a -fsynopsys --work=xpm xpm/*.vhd
+```
+
+XPM repo: https://github.com/fransschreuder/xpm_vhdl
+
+
+# GHDL
+
+
+
+## UNISIM
+
+It is necessary to analyze the libraries previous to analyze the project.
+
+_(Follow this order to analyze the UNISIM library)_
+``` bash
+ghdl -a --std=08 -fsynopsys --work=unisim unisim/vcomponents/*.vhd
+ghdl -a --std=08 -fsynopsys --work=unisim unisim/primitives/*.vhd
+ghdl -a --std=08 -fsynopsys --work=unisim unisim/retarget/*.vhd
+```
+
+It is important that if you analyze the library UNISIM as VHDL 2008, to analyze your
+files as VHDL 2008.
+
+### Example
+
+``` bash
+ghdl -a --std=08 -fsynopsys --work=unisim unisim/vcomponents/*.vhd
+ghdl -a --std=08 -fsynopsys --work=unisim unisim/primitives/*.vhd
+ghdl -a --std=08 -fsynopsys --work=unisim unisim/retarget/*.vhd
+
+# Analyze the files
+ghdl -a --std=08 rtl/top.vhd
+ghdl -a --std=08 tb/tb_top.vhd
+# Elaboration
+ghdl -e --std=08 tb_top
+# Simulation
+ghdl -r --std=08 tb_top --stop-time=100ms --wave=test.ghw
+```
+
+Recomendation, to simulate with GHDL, use the GHW format because it is more faster.
+
+## XPM
+
+For the XPM library use this command.
+
+``` bash
+ghdl -a --std=08 -fsynopsys --work=xpm xpm/*.vhd
+```
+
+XPM repo: https://github.com/fransschreuder/xpm_vhdl
+
