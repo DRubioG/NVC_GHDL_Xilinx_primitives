@@ -50,10 +50,25 @@ To use in NVC use these commands.
 
 _(This simulator is more faster than GHDL)_
 
-``` bash
+_Linux_
+``` shell
 nvc --work=unisim -M 32m -a unisim/vcomponents/*.vhd
 nvc --work=unisim -M 32m -a unisim/primitives/*.vhd
 nvc --work=unisim -M 32m -a unisim/retarget/*.vhd
+```
+
+_Windows PowerShell_
+``` Powershell
+nvc --work=unisim -M 32m -a (Get-ChildItem .\unisim\vcomponents\*.vhd).FullName
+nvc --work=unisim -M 32m -a (Get-ChildItem .\unisim\primitives\*.vhd).FullName
+nvc --work=unisim -M 32m -a (Get-ChildItem .\unisim\retarget\*.vhd).FullName
+```
+
+_Windows CMD_
+``` cmd
+for %%f in (unisim\vcomponents\*.vhd) do nvc --work=unisim -M 32m -a "%%f"
+for %%f in (unisim\primitives\*.vhd) do nvc --work=unisim -M 32m -a "%%f"
+for %%f in (unisim\retarget\*.vhd) do nvc --work=unisim -M 32m -a "%%f"
 ```
 
 
