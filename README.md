@@ -1,4 +1,4 @@
-# GHDL_Xilinx_libraries
+# NVC & GHDL_Xilinx_libraries
 
 <u>**NOTE:**</u> These libraries are only necessaries to analyze once. Could be comment or remove it in the simulations.
 
