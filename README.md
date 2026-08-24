@@ -12,9 +12,9 @@ _(This simulator is more faster than GHDL)_
 
 _Linux_
 ``` shell
-nvc --work=unisim -M 32m -a unisim/vcomponents/*.vhd
-nvc --work=unisim -M 32m -a unisim/primitives/*.vhd
-nvc --work=unisim -M 32m -a unisim/retarget/*.vhd
+# 'data' folder must be in this folder
+export XILINX_VIVADO=/download_folder
+nvc --std=2008 --install vivado xpm_vhdl --dest=/folder_to_create_libraries
 ```
 
 _Windows PowerShell_
