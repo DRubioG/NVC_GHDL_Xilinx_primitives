@@ -19,9 +19,9 @@ nvc --std=2008 --install vivado xpm_vhdl --dest=/folder_to_create_libraries
 
 _Windows PowerShell_
 ``` Powershell
-nvc --work=unisim -M 32m -a (Get-ChildItem .\unisim\vcomponents\*.vhd).FullName
-nvc --work=unisim -M 32m -a (Get-ChildItem .\unisim\primitives\*.vhd).FullName
-nvc --work=unisim -M 32m -a (Get-ChildItem .\unisim\retarget\*.vhd).FullName
+Get-ChildItem .\unisim\vcomponents\*.vhd | ForEach-Object { nvc --work=unisim -M 32m -a $_.FullName }
+Get-ChildItem .\unisim\primitives\*.vhd | ForEach-Object { nvc --work=unisim -M 32m -a $_.FullName }
+Get-ChildItem .\unisim\retarget\*.vhd | ForEach-Object { nvc --work=unisim -M 32m -a $_.FullName }
 ```
 
 _Windows CMD_
